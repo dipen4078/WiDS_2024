@@ -42,3 +42,24 @@
     - CoOp + CLiP shows clear advantage over Linear Probe CLiP as latter requires four shot training to reach threshold of zero shot CLiP while this model on four shots is already 15% more accurate than Zero Shot CLiP.
 - ### Limitations :
   - Overfits for small datasets if not regulated properly.
+
+## Paper C: Vision Language Models
+- Vision Language Models aka VLMs are higher order of CLiP which are AI models which can understand both image and text together. Eg:- CLiP, BLiP, ALIGN
+- Normal CLiP models don't perform any good on imbalanced datasets and fine grained rare classes.
+- #### The approaches to the issue of imbalanced classification :
+        a) Loss function engineering - Adjust weight of losses of different classes to achive more balanced distribution.
+        b) 2 stage decision boundary adjustment - decision boundary adjustment.
+        c) Other methods : transfer learning, task specific architecture design, domain adaptation.
+- CoOp and CoCoOp just does prompt tuning which is not specifically designed for imbalanced learning tasks as it just aims to create similarity between every image.
+- Fine tuning model on just the added classifier layer of the CLiP model would not be sufficient.
+- ### Steps:
+  - We do not use the text decoder and use a lightweight decoder instead output of this decoder will be given to classifier and the classification scores can be adjusted for making more balanced dataset.
+- #### There are three ways in which we can train the dataset classifier:
+      a) Training by instance based sampling and cross entropy loss
+      b) Training by class specific loss
+      c) Training by two stage algorithms
+- ### Results:
+   - Strong zero shot predictions on ImageNet-LT
+   - Decoder with softmax outperforms prompt tuning
+- ### Limitations:
+   - Vulnerable to small modifications in image/text to trick the model.   
