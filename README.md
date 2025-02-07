@@ -26,7 +26,7 @@
 - Performance of CLiP is poor when it comes to fine grained classifications like differentiating within a species. It also struggle on counting the number of objects.
 
 
-#* Paper B: CoOp
+## Paper B: CoOp
 - CoOp(Context Optimization) aims to improve zero shot CLiP by giving better prompts as identifying right prompt for CLiP is non trivial.
 - As Prompts play a significant role in CLiP Model CoOp improves the accuracy of zero shot CLiP by a significant margin.
 - Models prompt's context words with learnable vectors which could be initialized with random vectors or pre trained word embeddings
