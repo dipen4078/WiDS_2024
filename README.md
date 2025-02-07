@@ -34,3 +34,11 @@
       a) Based on unified context - shares same context with all classes
       b) Based on class specific context - learns specific set of context tokens for each class and is found to be more suitable for fine grained categories.
 - Outperforms hand crafted prompts and linear probe CLiP model within just a few shots of CoOp.
+- ### Training :
+    - Here we encode the text using text encoder and then obtain a classification weight vector.
+    - Put Class token anywhere in the encoded vector and train according to the implementation.
+    - Loss computation is done by Cross Entropy Loss function.
+- ### Results :
+    - CoOp + CLiP shows clear advantage over Linear Probe CLiP as latter requires four shot training to reach threshold of zero shot CLiP while this model on four shots is already 15% more accurate than Zero Shot CLiP.
+- ### Limitations :
+  - Overfits for small datasets if not regulated properly.
